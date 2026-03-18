@@ -66,19 +66,3 @@ python run.py --adam_steps 3000 --strong_lbfgs_steps 600 --energy_lbfgs_steps 10
 - `outputs/energy_form/final_displacement.png`
 - 两个模型各自的 `loss_history.csv`
 
-## 5. 大文件控制
-- `.gitignore` 仅忽略常见大二进制类型（如 `*.pth`、`*.npz`、压缩包）。
-- 图片、Excel、CSV 可以正常提交。
-- 提交前阈值检查由 `pre-commit` 完成，默认单文件上限为 `30MB`。
-
-启用 hook：
-
-```bash
-git config core.hooksPath .githooks
-```
-
-临时将上限改为 50MB：
-
-```powershell
-$env:MAX_FILE_SIZE_MB=50; git commit -m "msg"
-```
